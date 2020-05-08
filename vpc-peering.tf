@@ -36,8 +36,8 @@ module "vpc-ohio" {
 }
 
 resource "aws_vpc_peering_connection" "pc" {
-  peer_vpc_id = "${module.vpc-virginia.vpc_id}"
-  vpc_id      = "${module.vpc-ohio.vpc_id}"
+  peer_vpc_id = "${module.vpc-ohio.vpc_id}"
+  vpc_id      = "${module.vpc-virginia.vpc_id}"
   auto_accept = true
 
   accepter {
