@@ -35,6 +35,15 @@ module "vpc-ohio" {
   }
 }
 
+  
+  # working code for specific region
+# resource "aws_vpc_peering_connection" "foo" {
+#   vpc_id        = "vpc-08ea9b23de273d0c7"             #Original VPC
+#   peer_vpc_id   = "vpc-0e5363c254cbb6450"             # Target VPC
+#   peer_region   = "us-east-2"                          # Target Region
+#   auto_accept   = "false"
+# }
+ 
 resource "aws_vpc_peering_connection" "pc" {
   peer_vpc_id = "${module.vpc-ohio.vpc_id}"
   vpc_id      = "${module.vpc-virginia.vpc_id}"
